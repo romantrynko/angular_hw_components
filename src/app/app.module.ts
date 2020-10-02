@@ -8,20 +8,30 @@ import { UserComponent } from './entity/user/components/user/user.component';
 import { RouterModule } from '@angular/router';
 import { AllUsersComponent } from './entity/user/components/all-users/all-users.component';
 import { UserResolveService } from './entity/user/services/user-resolve.service';
+import { AllPostsComponent } from './entity/user/components/all-posts/all-posts.component';
+import { PostComponent } from './entity/user/components/post/post.component';
+import { CommentComponent } from './entity/user/components/comment/comment.component';
+import { AllCommentsComponent } from './entity/user/components/all-comments/all-comments.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    AllPostsComponent,
+    PostComponent,
+    CommentComponent,
+    AllCommentsComponent
   ],
   imports: [
   AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'users', component: AllUsersComponent, resolve: {xxx: UserResolveService}}
+      {path: 'users', component: AllUsersComponent, resolve: {xxx: UserResolveService}},
+      {path: 'posts', component: AllPostsComponent},
+      {path: 'comments', component: AllCommentsComponent}
     ])
   ],
   providers: [],
