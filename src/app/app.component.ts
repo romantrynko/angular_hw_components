@@ -9,10 +9,6 @@ import { User } from './models/User';
 })
 export class AppComponent {
   title = 'app';
-  usersList: User[] = [];
-
-  constructor(private userService: UserService) {
-    this.userService.getUsers()
-    .subscribe(value => this.usersList = value);
+  constructor() {
   }
 }

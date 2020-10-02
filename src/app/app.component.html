@@ -1,3 +1,9 @@
 <h1>ok10</h1>
 
-<app-user [user]="user" *ngFor="let user of usersList" ></app-user>
+<ul>
+  <li><a routerLink="users">Users</a></li>
+  <li><a routerLink="posts">Posts</a></li>
+  <li><a routerLink="comments">Comments</a></li>
+</ul>
+<router-outlet></router-outlet>
+<!-- <app-user [user]="user" *ngFor="let user of usersList" ></app-user> -->
