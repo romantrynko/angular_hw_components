@@ -2,6 +2,11 @@
   {{user.id}}
   {{user.name}}
   {{user.username}}
+
+  <!--                 users/details/id -->
+  <!-- <button [routerLink]="['details', user.id]">Details</button> -->
+  <button [routerLink]="['details', user.id]" [state]="{user: user}">Details</button>
+
   <hr>
 </div>
 
