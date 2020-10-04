@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/Post';
-import { PostService } from './../../services/post.service';
+
 
 @Component({
   templateUrl: './all-posts.component.html',
@@ -11,7 +11,12 @@ export class AllPostsComponent {
 
   postsList: Post[] = [];
 
-  constructor(private postService: PostService) {
-    this.postService.getPosts().subscribe(value => this.postsList = value);
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe(value => {
+      console.log(value.allPosts);
+
+      this.postsList = value.allPosts;
+    });
    }
+
 }

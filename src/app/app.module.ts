@@ -12,6 +12,7 @@ import { AllPostsComponent } from './entity/user/components/all-posts/all-posts.
 import { PostComponent } from './entity/user/components/post/post.component';
 import { CommentComponent } from './entity/user/components/comment/comment.component';
 import { AllCommentsComponent } from './entity/user/components/all-comments/all-comments.component';
+import { PostResolveService } from './entity/user/services/post-resolve.service';
 
 
 @NgModule({
@@ -25,13 +26,13 @@ import { AllCommentsComponent } from './entity/user/components/all-comments/all-
     AllCommentsComponent
   ],
   imports: [
-  AppRoutingModule,
+AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'users', component: AllUsersComponent, resolve: {xxx: UserResolveService}},
-      {path: 'posts', component: AllPostsComponent},
-      {path: 'comments', component: AllCommentsComponent}
+      {path: 'posts', component: AllPostsComponent, resolve: {allPosts: PostResolveService}},
+      {path: 'comments', component: AllCommentsComponent},
     ])
   ],
   providers: [],
