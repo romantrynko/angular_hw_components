@@ -16,7 +16,7 @@ export class PostService {
      return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
    }
 
-   getCommentOfSinglePost(id: string): Observable<Post[]> {
-    return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+   getPostByUserId(id): Observable<Post[]> {
+    return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
  }
 }

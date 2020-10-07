@@ -5,8 +5,9 @@
 
   <!--                 users/details/id -->
   <!-- <button [routerLink]="['details', user.id]">Details</button> -->
-  <button [routerLink]="['details', user.id]" [state]="{user: user}">Details</button>
-
+  <!-- <button [routerLink]="['details', user.id]" [state]="{user: user}">Details</button> -->
+<!-- <button (click)="goSomewhere(user.id)">Details</button> -->
+<button [routerLink]="['posts']" [queryParams]="{id: user.id, name: user.name}">Details</button>
   <hr>
 </div>
 

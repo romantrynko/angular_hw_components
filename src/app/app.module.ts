@@ -15,6 +15,7 @@ import { AllCommentsComponent } from './entity/user/components/all-comments/all-
 import { PostResolveService } from './entity/user/services/post-resolve.service';
 import { UserDetailsComponent } from './entity/user/components/user-details/user-details.component';
 import { UserDetails2Component } from './entity/user/components/user-details2/user-details2.component';
+import { UserDetails3Component } from './entity/user/components/user-details3/user-details3.component';
 
 @NgModule({
   declarations: [
@@ -26,21 +27,21 @@ import { UserDetails2Component } from './entity/user/components/user-details2/us
     CommentComponent,
     AllCommentsComponent,
     UserDetailsComponent,
-    UserDetails2Component
+    UserDetails2Component,
+    UserDetails3Component
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      // /users
       {path: 'users', component: AllUsersComponent, resolve: {xxx: UserResolveService},
     children: [
-      // users/details
       // {path: 'details/:id', component: UserDetailsComponent}
-      {path: 'details/:id', component: UserDetails2Component}
+      // {path: 'details/:id', component: UserDetails2Component}
+      {path: 'details/:id', component: UserDetails3Component},
+      {path: 'posts', component: AllPostsComponent}
     ]},
-      // {path: 'users/details/:id', component: UserComponent},
       {path: 'posts', component: AllPostsComponent, resolve: {allPosts: PostResolveService}},
       {path: 'comments', component: AllCommentsComponent},
     ])
