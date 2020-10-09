@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Post } from './../../../models/Post';
+// import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs';
+// import { Post } from './../../../models/Post';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PostService {
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class PostService {
 
-  constructor(private http: HttpClient) {
+//   constructor(private http: HttpClient) {
 
-   }
+//    }
 
-   getPosts(): Observable<Post[]> {
-     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
-   }
+//    getPosts(): Observable<Post[]> {
+//      return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+//    }
 
-   getPostByUserId(id): Observable<Post[]> {
-    return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
- }
-}
+//    getPostByUserId(id): Observable<Post[]> {
+//     return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
+//  }
+// }

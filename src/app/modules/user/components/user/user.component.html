@@ -1,13 +1,17 @@
 <div class="container">
-  {{user.id}}
-  {{user.name}}
-  {{user.username}}
+  Id: {{user.id}}
+  <br>
+  Name: {{user.name}}
+  <br>
+  Username: {{user.username}}
+<hr>
 
   <!--                 users/details/id -->
   <!-- <button [routerLink]="['details', user.id]">Details</button> -->
   <!-- <button [routerLink]="['details', user.id]" [state]="{user: user}">Details</button> -->
 <!-- <button (click)="goSomewhere(user.id)">Details</button> -->
-<button [routerLink]="['posts']" [queryParams]="{id: user.id, name: user.name}">Details</button>
+<!-- <button [routerLink]="['posts']" [queryParams]="{id: user.id, name: user.name}">Details</button> -->
+<button (click)="choose(user)"> Save this user </button>
   <hr>
 </div>
 

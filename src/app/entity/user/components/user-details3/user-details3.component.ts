@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UserDetails3Component implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(value => {
+  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
+    this.activatedRouter.params.subscribe(value => {
       console.log(value);
     });
    }
